@@ -1,1 +1,280 @@
-<html><body><h1>Football Media Network</h1><p>AI-powered football media platform.</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Football Media Network — AI-Powered Football Coverage</title>
+<meta name="description" content="Football Media Network delivers AI-generated match graphics, live goal alerts, transfer news and Man of the Match breakdowns across Telegram, X, TikTok and YouTube.">
+<style>
+  :root {
+    --bg: #0d0d1a;
+    --card: #12122a;
+    --border: #1e1e3f;
+    --accent: #00b4ff;
+    --gold: #ffd700;
+    --green: #00e576;
+    --red: #ff3b3b;
+    --text: #f2f2f7;
+    --muted: #9797ab;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    line-height: 1.5;
+  }
+  a { color: var(--accent); }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+  header.top {
+    border-bottom: 1px solid var(--border);
+    background: var(--card);
+  }
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 18px 0;
+  }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 0.5px; }
+  .brand .ball { font-size: 22px; }
+  .brand span { font-size: 15px; }
+  .topnav { display: flex; gap: 22px; font-size: 14px; }
+  .topnav a { color: var(--muted); text-decoration: none; }
+  .topnav a:hover { color: var(--text); }
+
+  .stripe { height: 5px; display: flex; }
+  .stripe div { flex: 1; }
+  .stripe .g { background: var(--green); }
+  .stripe .k { background: #111; }
+  .stripe .r { background: var(--red); }
+
+  .hero {
+    padding: 72px 0 56px;
+    text-align: center;
+  }
+  .hero h1 {
+    font-size: 40px;
+    font-weight: 900;
+    margin: 0 0 16px;
+    letter-spacing: 0.5px;
+  }
+  .hero h1 .hl { color: var(--gold); }
+  .hero p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--muted);
+    font-size: 17px;
+  }
+  .hero .badges {
+    display: flex; justify-content: center; gap: 10px; margin-top: 28px; flex-wrap: wrap;
+  }
+  .badge {
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.03);
+    color: var(--muted);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+  }
+
+  section { padding: 48px 0; }
+  section.alt { background: var(--card); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+
+  h2.section-title {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 800;
+    margin: 0 0 28px;
+    text-align: center;
+  }
+
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .feature {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 22px;
+  }
+  .feature .ico { font-size: 26px; margin-bottom: 10px; }
+  .feature h3 { margin: 0 0 8px; font-size: 16px; }
+  .feature p { margin: 0; color: var(--muted); font-size: 14px; }
+
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .gallery figure { margin: 0; }
+  .gallery img {
+    width: 100%; display: block; border-radius: 12px;
+    border: 1px solid var(--border);
+  }
+  .gallery figcaption {
+    text-align: center; color: var(--muted); font-size: 13px; margin-top: 10px;
+  }
+
+  .platforms { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+  .platform {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px 20px;
+    text-decoration: none; color: var(--text); font-weight: 600; font-size: 14px;
+  }
+  .platform:hover { border-color: var(--accent); }
+  .platform .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+
+  .contact {
+    text-align: center;
+  }
+  .contact p { color: var(--muted); }
+  .contact a.email {
+    display: inline-block; margin-top: 12px;
+    background: var(--accent); color: var(--bg);
+    padding: 10px 22px; border-radius: 8px;
+    font-weight: 700; text-decoration: none; font-size: 14px;
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+  }
+  footer a { color: var(--muted); text-decoration: underline; margin: 0 8px; }
+  footer a:hover { color: var(--text); }
+
+  @media (max-width: 760px) {
+    .grid3, .gallery { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 30px; }
+    .topnav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap topbar">
+    <div class="brand"><span class="ball">⚽</span><span>FOOTBALL MEDIA NETWORK</span></div>
+    <nav class="topnav">
+      <a href="#what">What We Do</a>
+      <a href="#samples">Samples</a>
+      <a href="#platforms">Follow</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+  <div class="stripe"><div class="g"></div><div class="k"></div><div class="r"></div></div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <h1>Football coverage,<br><span class="hl">generated the moment it happens.</span></h1>
+    <p>Football Media Network is an automated sports media outlet: an AI pipeline that watches live matches
+       across major leagues and international tournaments, then writes and publishes goal alerts, match
+       reports, transfer news and Man of the Match breakdowns — in seconds, not minutes.</p>
+    <div class="badges">
+      <span class="badge">Live goal alerts</span>
+      <span class="badge">AI match reports</span>
+      <span class="badge">Transfer news</span>
+      <span class="badge">Man of the Match</span>
+      <span class="badge">Daily video recaps</span>
+    </div>
+  </div>
+</section>
+
+<section id="what" class="alt">
+  <div class="wrap">
+    <h2 class="section-title">What We Do</h2>
+    <div class="grid3">
+      <div class="feature">
+        <div class="ico">⚡</div>
+        <h3>Instant Goal Alerts</h3>
+        <p>Multiple independent data sources are cross-checked in real time so goals, scorers and match
+           clocks are posted the moment they're confirmed — with a verification badge showing source
+           agreement.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">📰</div>
+        <h3>AI Match Reports &amp; Transfer News</h3>
+        <p>Daily AI-written summaries of results, standings and the day's biggest transfer stories,
+           sourced from major football outlets and turned into branded graphics automatically.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🏆</div>
+        <h3>Man of the Match &amp; Stats</h3>
+        <p>End-of-match breakdowns highlighting the standout performer, with goals, assists, shots and
+           key stats laid out in a shareable card.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🎬</div>
+        <h3>Video Recaps</h3>
+        <p>Automated highlight-style video packages — score graphics, storylines and stats — rendered
+           and published across video platforms.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🌍</div>
+        <h3>Global Coverage</h3>
+        <p>Premier League, La Liga, Bundesliga, Serie A, Ligue 1, and major international tournaments
+           including the FIFA World Cup.</p>
+      </div>
+      <div class="feature">
+        <div class="ico">🤖</div>
+        <h3>Fully Automated</h3>
+        <p>From data collection to publishing, the entire pipeline runs autonomously — a human reviews
+           the brand, not every post.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="samples">
+  <div class="wrap">
+    <h2 class="section-title">Sample Output</h2>
+    <div class="gallery">
+      <figure>
+        <img src="assets/samples/goal-live.png" alt="Live goal alert graphic: Uruguay 0 - 1 Spain, 42nd minute">
+        <figcaption>Live goal alert</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/samples/motm.jpg" alt="Man of the Match card for Kylian Mbappe, FIFA World Cup 2026">
+        <figcaption>Man of the Match card</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/samples/transfer-news.jpg" alt="Transfer news graphic sourced from Sky Sports">
+        <figcaption>Transfer news brief</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section id="platforms" class="alt">
+  <div class="wrap">
+    <h2 class="section-title">Follow The Coverage</h2>
+    <div class="platforms">
+      <a class="platform" href="https://t.me/FootballMediaNetwork"><span class="dot"></span>Telegram</a>
+      <a class="platform" href="https://x.com/FootballMediaNetwork"><span class="dot"></span>X / Twitter</a>
+      <a class="platform" href="https://www.tiktok.com/@footballmedianetwork"><span class="dot"></span>TikTok</a>
+      <a class="platform" href="https://www.youtube.com/@FootballMediaNetwork"><span class="dot"></span>YouTube</a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2 class="section-title">Contact</h2>
+    <p>Questions about our coverage, a correction request, or a partnership inquiry?</p>
+    <a class="email" href="mailto:mworyoe@gmail.com">mworyoe@gmail.com</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="y"></span> Football Media Network. All rights reserved.</div>
+    <div style="margin-top:8px;">
+      <a href="privacy.html">Privacy Policy</a>·<a href="terms.html">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>

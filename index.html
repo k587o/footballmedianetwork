@@ -5,6 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Football Media Network — AI-Powered Football Coverage</title>
 <meta name="description" content="Football Media Network delivers AI-generated match graphics, live goal alerts, transfer news and Man of the Match breakdowns across Telegram, X, TikTok and YouTube.">
+<!-- The same artwork submitted as the TikTok app icon, at every size and on
+     every page. Review rejected the app because the icon in Basic Info did
+     not match the site or the browser tab: the site declared no favicon at
+     all, and the header showed a football emoji instead of the mark. -->
+<link rel="icon" href="assets/brand/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/brand/icon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/brand/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/brand/icon-180.png">
+<meta property="og:title" content="Football Media Network">
+<meta property="og:description" content="AI-generated match graphics, live goal alerts, transfer news and Man of the Match breakdowns.">
+<meta property="og:image" content="assets/brand/icon-512.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="assets/brand/icon-512.png">
 <style>
   :root {
     --bg: #0d0d1a;
@@ -37,7 +50,13 @@
     padding: 18px 0;
   }
   .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 0.5px; }
-  .brand .ball { font-size: 22px; }
+  /* The logo is dark artwork on white, and this header sits on a near-black
+     background - so it gets its own white plate rather than being dropped
+     onto the dark and disappearing. */
+  .brand .mark {
+    width: 34px; height: 34px; border-radius: 8px;
+    background: #fff; padding: 3px; object-fit: contain; display: block;
+  }
   .brand span { font-size: 15px; }
   .topnav { display: flex; gap: 22px; font-size: 14px; }
   .topnav a { color: var(--muted); text-decoration: none; }
@@ -154,7 +173,7 @@
 
 <header class="top">
   <div class="wrap topbar">
-    <div class="brand"><span class="ball">⚽</span><span>FOOTBALL MEDIA NETWORK</span></div>
+    <div class="brand"><img class="mark" src="assets/brand/icon-192.png" alt="Football Media Network"><span>FOOTBALL MEDIA NETWORK</span></div>
     <nav class="topnav">
       <a href="#what">What We Do</a>
       <a href="#samples">Samples</a>
